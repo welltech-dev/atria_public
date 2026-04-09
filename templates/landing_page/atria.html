@@ -1,0 +1,97 @@
+{% extends "layouts/base_atria.html" %}
+
+{% block title %}
+Shopping Átria
+{% endblock %}
+
+{% block content %}
+
+<section class="hero reveal">
+
+    <h1 class="top">Shopping Átria</h1>
+    <h2 class="untop">ÁTRIA</h2>
+
+    <p class="texto">A nova geração de gestão para shoppings virtuais.</p>
+    <p class="texto">O centro digital dos negócios</p>
+
+    <div class="buttons">
+
+        <a href="{{ url_for('auth.register') }}" class="btn">Criar conta</a>
+        <a href="{{ url_for('auth.login') }}" class="btn-secondary">Entrar</a>
+
+    </div>
+
+    <div class="scroll-indicator">↓ Conheça a plataforma</div>
+
+</section>
+
+
+<section class="features reveal">
+
+    <h2>Ferramentas do shopping</h2>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <h3>Lojas Digitais</h3>
+            <p>Crie e gerencie lojas dentro da Átria.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Gestão de Clientes</h3>
+            <p>Organize seus clientes com segurança.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Automação</h3>
+            <p>Automatize processos e vendas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="stores reveal">
+
+    <h2>Corredores da Átria</h2>
+
+    <div class="stores-grid">
+
+        <div class="store-card">
+            <h3>Primeza</h3>
+            <p>Loja 01</p>
+        </div>
+
+        <div class="store-card">
+            <h3>Em breve</h3>
+            <p>Loja 02</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="atrium reveal">
+
+    <h2>Um shopping digital</h2>
+
+    <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1200" alt="atrio">
+
+</section>
+
+
+<section class="cta reveal">
+
+    <h2>Comece agora</h2>
+
+    <p>Crie sua conta e entre para a Átria.</p>
+
+    <div class="btn-last-container">
+        <button class="btn-last">Criar Conta</button>
+    </div>
+
+</section>
+
+{% endblock %}

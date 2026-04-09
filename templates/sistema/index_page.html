@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/estilos.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        <title>Primeza</title>
+    </head>
+<body>
+    <header class="title">
+        <div class="logo_site">
+            <img class="Primeza" 
+            src="{{ url_for('static',filename='img/img_fundo_01.jpg') }}"
+            alt='logo_site'>
+        </div>
+        
+        <h1>Seja bem vindo à Primeza,</h1>
+        <h3 class="subtitulo">Aqui você realmente encontra os Produtos que em outros lugares você não encontra.</h3>
+        <nav class="link">
+            <ul class="acima">
+                <li><a href="{{ url_for('system.index') }}">Início</a>
+                <li><a href="{{ url_for('system.sobre') }}">Sobre nós</a></li>
+                <!--!!!!!CRIAR O ARQUIVO CONTATO!!!!!-->
+                <li><a href="{{ url_for('system.contato') }}"      
+                    target="_blank" 
+                    rel="noopener noreferrer">Contato</a></li>  
+            </ul>                
+        </nav>
+    </header>
+    <main>        
+        <section>
+
+           <article class="card">
+                <header class="container">
+                    <h2 class="produto">
+                        Produto 3
+                    </h2>
+                </header>
+
+                <div class="content">
+                    <img class="img" 
+                    src="{{ url_for('static', filename='img/utilidade.jpg') }}"
+                    alt="Neodímeo N5s2">
+                    <p class="description">Neodímeo N42 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, totam, autem illo velit beatae explicabo voluptatem eveniet ad veritatis eaque dolores magni, quia aliquam eligendi sint repellendus mollitia doloribus? Accusantium?</p>
+                </div>
+
+                <footer class="int_footer">
+                    <button class="btn1" >
+                        <a href="{{ url_for('system.produto_03') }}" 
+                        rel="noopener noreferrer">Vá à compra</a>
+                    </button>
+                    <p class="garantia">
+                        **Produto com garantia de 1 ano contra defeitos de fabricação.**
+                    </p>
+                </footer>
+
+            </article>            
+
+            <article class="card">
+                <header class="container">
+                    <h2 class="produto">
+                        Produto 4
+                    </h2>img/neodimi_quadr.png
+                </header>
+
+                <div class="content">
+                    <img class="img" 
+                    src="{{ url_for('static', filename='img/neodimi_quadr.png')}}" 
+                    alt="nodímio N52">img/neodimi_quadr.png
+                    <p class="description">Neodímeo N52 ypisolon Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem esse doloribus aliquam animi, at numquam architecto accusamus maiores odio nam fugit sint cupiditate, tempore eligendi laborum praesentium iste assumenda.</p>
+                </div>
+
+                <footer class="int_footer">
+                    <button class="btn2">
+                        <a href="{{ url_for('system.produto_04') }}" 
+                        rel="noopener noreferrer">Vá à compra</a>
+                    </button>
+                    <p class="garantia">
+                        **Produto com garantia de 1 ano contra defeitos de fabricação.**
+                    </p>
+                </footer>
+
+            </article>
+
+        </section>
+
+        <aside>
+            <p class="promocoes"><strong>Ofertas, venha conhecer:</strong></p>
+            <ul class="lista_ofertas">
+                <li class="desconto">
+                    <a href="{{ url_for('system.produto_01') }}">
+                        Desconto de 20% em todos os produtos
+                    </a>
+                </li>
+
+                <li class="frete_gratis">
+                    <a href="{{ url_for('system.produto_02') }}">
+                        Frete grátis para compras acima de R$100
+                    </a>
+                </li>
+
+                <li class="pague_um">
+                    <a href="{{ url_for('system.produto_03') }}">
+                        Compre 1 leve 2 em itens selecionados
+                    </a>
+                </li>
+
+                <li class="fim_oferta">
+                    <a href="{{ url_for('system.produto_04') }}">
+                        Oferta válida até o final do mês
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <nav class="sublink">
+            <ul class="abaixo">
+                <li><a href="{{ url_for('system.produto_01') }}">Produtos com descontos</a></li>
+                <li><a href="{{ url_for('system.produto_02') }}">Compras acima de R$100,00</a></li>
+                <li><a href="{{ url_for('system.produto_03') }}">Compre 1 leve 2</a></li>
+                <li><a href="{{ url_for('system.produto_04') }}">Não perca a chance entre em contato agora mesmo</a></li>
+            </ul>
+
+        </nav>
+    </main>
+    <footer class="feet">
+        <button class="btn_back">
+            <a href="{{ url_for('system.index') }}" 
+            rel="noopener noreferrer">Back</a>
+        </button>
+
+        <img class="logo_branch_tech"
+        src="{{ url_for('static', filename='img/logo_welltech-dev.png') }}" 
+        alt=" WellTech">
+        <p class="dev">© 2026, WellTech-Dev, todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

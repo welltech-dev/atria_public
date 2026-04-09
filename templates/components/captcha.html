@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Captcha Flutuante</title>
+        <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='captcha/captcha.css') }}">
+    </head>
+    <body>
+        <!-- Container flutuante -->
+        <div id="captcha-modal" class="captcha-modal hidden">
+
+            <div class="captcha-container">
+
+                <!-- Header -->
+                <div class="captcha-header">
+                    <span>Não sou robô</span>
+                    <button id="captcha-minimize">−</button>
+                </div>
+
+                <!-- Corpo -->
+                <div class="captcha-body">
+
+                    <!-- Pergunta -->
+                    <div id="captcha-question" class="captcha-question">
+                        2 + 2
+                    </div>
+
+                    <!-- Input -->
+                    <input 
+                        type="text" 
+                        id="captcha-answer" 
+                        placeholder="Digite a resposta"
+                        autocomplete="off"
+                    >
+
+                    <!-- Botão -->
+                    <button id="captcha-submit">
+                        Confirmar
+                    </button>
+
+                    <!-- Feedback -->
+                    <div id="captcha-feedback"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+    <script src="{{ url_for('static', filename='captcha/captcha.js') }}" defer></script>
+    </body>
+</html>

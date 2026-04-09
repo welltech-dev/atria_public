@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+    <title>Primeza - Cadastro</title>
+</head>
+<body>
+
+    <div class="container_login">
+
+        <form class="form" method="POST" action="{{ url_for('auth.register') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <h2>Faça o seu cadastro.</h2>
+
+            <div class="input_box">
+                <input type="email" name="email" placeholder="" required>
+                <span>Digite aqui o email de cadastro.</span>
+            </div>
+
+            <div class="input_box">
+                <input type="password" name="senha" placeholder="" required>
+                <span>Digite a sua senha.</span>
+            </div>
+
+            <div class="input_box">
+                <input type="password" name="confirmar_senha" placeholder="" required>
+                <span>Confirme a sua senha.</span>
+            </div>
+
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+
+        <p class="cadastro_link">
+            Se já tem cadastrou?
+            <a href="{{ url_for('auth.login') }}">Faça o seu login.</a>
+        </p>
+
+    </div>
+
+    <footer class="feet">
+        <img class="logo_branch_tech"
+            src="{{ url_for('static', filename='img/logo_welltech-dev.png') }}"
+            alt="Logo WellTech">
+        <p class="dev">© 2026, WellTech-Dev, todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
+
+<script>
+window.addEventListener("beforeunload", () => {
+    // limpa campos de cadastro quando a página fechar
+    document.getElementById("email").value = "";
+    document.getElementById("senha").value = "";
+    document.getElementById("confirmar_senha").value = "";
+});
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neodímio N42</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Neodímio N42 Redondo</h1>
+        <p>Descrição do Neodímio N42 Redondo</p>
+    </header>
+
+    <main>
+        <div class="produto-detalhes">
+            <img 
+            src="{{ url_for('static', filename='img/neodimio_redendo.jpg') }}" 
+            alt="Imagem do Produto 01">
+            <p>Detalhes completos sobre o Produto 01. Este produto é feito de materiais de alta qualidade e oferece excelente desempenho para suas necessidades.</p>
+            <p>Preço: R$ 99,99</p>
+            <button class="btn-comprar">
+                <a 
+                href="{{ url_for('system.form') }}" 
+                rel="noopener noreferrer">
+                Comprar Agora
+                </a>
+            </button>
+        </div>
+
+        <article class="alerta-seguranca">
+            <h4>Atenção – Uso e Manuseio – Primeza Adverte:</h4>
+            <p>
+            Ímãs de neodímio possuem força magnética extremamente elevada.
+            O uso incorreto pode causar ferimentos graves, esmagamento de dedos,
+            danos a dispositivos eletrônicos
+            como marca-passo, aparelhos auditivos, outros dispositivos sensíveis também podem sofrer avarias em caso de contato com seu campo magnético. ! Matenha longe de crianças !
+            </p>
+        </article>
+        
+        <footer class="feet">
+
+            <button class="btn-comprar">
+                <a 
+                href="{{ url_for('system.index')}}" 
+                rel="noopener noreferrer">Início</a>
+            </button>
+
+            <img class="logo_branch_tech"
+            src="{{ url_for('static', filename='img/logo_welltech-dev.png') }}" 
+            alt=" WellTech">
+            <p class="dev">© 2026, WellTech-Dev, Mantendo todos os direitos reservados..</p>
+        </footer>
+    </main>
+</body>
+</html>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>

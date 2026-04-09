@@ -1,0 +1,9 @@
+{
+  "transacao_id": "trx_782ab1",
+  "cliente_id": "cli_9f3a21c8",
+  "valor": 0,
+  "status": "Done",
+  "gateway": "banco_x",
+  "criado_em": "2026-01-24T10:40:12Z"
+}
+

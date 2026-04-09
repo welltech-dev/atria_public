@@ -1,0 +1,16 @@
+{
+  "cliente": {
+    "nome": "Wellington Pereira",
+    "email": "w@teste.com",
+    "telefone": "+5511999999999"
+  },
+  "endereco": {
+    "endereco": "Rua X",
+    "numero": "123",
+    "bairro": "Centro",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "01001000",
+    "pais": "BR"
+  }
+}

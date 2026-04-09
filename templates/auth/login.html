@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+    
+    <!-- CSS do captcha -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='captcha/captcha.css') }}">
+    
+    <title>Primeza - Acesso</title>
+</head>
+
+<!-- VALOR VEM DO BACKEND AQUI -->
+<body data-show-captcha="{{ 'true' if show_captcha else 'false' }}">
+
+<div class="container_login">
+    
+    <form id="login-form" class="form" method="POST" action="{{ url_for('auth.login') }}">
+        
+        <!-- CSRF -->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+        <!-- CAPTCHA -->
+        <input type="hidden" name="captcha_token" id="captcha-token">
+        <input type="hidden" name="captcha_answer" id="captcha-answer-hidden">
+
+<<<<<<< HEAD
+                <div class="input_box">
+                    <input type="password" name="senha" placeholder="" required>
+                    <span>Digite aqui a sua senha.</span>
+                </div>
+
+                <button class="btn" type="submit">Entrar</button>
+
+            </form>
+
+            <p class="cadastro_link">
+                Ainda não tem conta?
+                <a href="{{ url_for('auth.register') }}">Cadastre-se</a>
+            </p>
+=======
+        <h2 class="login">faça seu login</h2>
+>>>>>>> 5833c60 (feat(security, auth, payment): implementei captcha inteligente + fortaleci autenticação + iniciei integração de pagamentos)
+
+        <div class="input_box">
+            <input type="email" id="email" name="email" required>
+            <span>Digite aqui o email de login.</span>
+        </div>
+
+        <div class="input_box">
+            <input type="password" id="senha" name="senha" required>
+            <span>Digite aqui a sua senha.</span>
+        </div>
+
+        <button class="btn" type="submit">Entrar</button>
+
+    </form>
+
+    {% include 'components/captcha.html' %}
+
+    <p class="cadastro_link">
+        Ainda não tem conta?
+        <a href="{{ url_for('auth.register') }}">Cadastre-se</a>
+    </p>
+
+</div>
+
+<footer class="feet">
+    <img class="logo_branch_tech"
+        src="{{ url_for('static', filename='img/logo_welltech-dev.png') }}"
+        alt="Logo WellTech">
+    <p class="dev">© 2026, WellTech-Dev, todos os direitos reservados.</p>
+</footer>    
+
+<!-- JS LIMPO SEM JINJA -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // pega do HTML (zero conflito com Jinja)
+    const showCaptcha = document.body.dataset.showCaptcha === "true";
+    window.showCaptcha = showCaptcha;
+    window.captchaValidated = false;
+
+    const form = document.getElementById("login-form");
+
+    form.addEventListener("submit", (e) => {
+        if (showCaptcha && !window.captchaValidated) {
+            e.preventDefault();
+            alert("Resolva o captcha antes de enviar o login!");
+        }
+    });
+
+    window.addEventListener("beforeunload", () => {
+        document.getElementById("email").value = "";
+        document.getElementById("senha").value = "";
+    });
+
+});
+<<<<<<< HEAD
+</script>
+=======
+</script>
+
+<!-- JS CAPTCHA -->
+<script src="{{ url_for('static', filename='captcha/captcha.js') }}"></script>
+
+</body>
+</html>
+>>>>>>> 5833c60 (feat(security, auth, payment): implementei captcha inteligente + fortaleci autenticação + iniciei integração de pagamentos)

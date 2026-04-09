@@ -1,0 +1,238 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #eaeaea;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: 'Gravitas One', sans-serif;
+}
+
+p, li {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.title {
+    min-height: 22vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+}
+
+.Primeza {
+    width: 140px;
+    margin: 10px auto;
+    display: block;
+}
+
+.subtitulo {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+/* Navegação principal */
+.link .acima {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.link a:hover {
+    background-color: #0f5c2e;
+}
+
+/*  Conteúdo principal */
+main {
+    padding: 30px 20px;
+}
+
+/*  Cards de produto  */
+.card {
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.produto {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.content {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.content img {
+    width: 260px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.description {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Rodapé interno do card */
+.int_footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.garantia {
+    font-size: 12px;
+    margin-top: -5px;
+    color: #aaa;
+    position: absolute;
+    left: 50px;
+}
+
+/*  Botões (base única)  */
+.btn1{
+    background-color: #0f5c2e;
+    border: 2px solid #1fa463;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn2{
+    background-color: #0f5c2e;
+    border: 2px solid #1fa463;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn_next {
+    background-color: #0f5c2e;
+    border: 2px solid #1fa463;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    right: 50px;
+}
+
+.btn_back {
+    background-color: #0f5c2e;
+    border: 2px solid #1fa463;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    left: 50px;
+}
+
+.btn1 a,
+.btn2 a,
+.btn_next a,
+.btn_back  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn_next:hover,
+.btn_back:hover {
+    background-color: #1a7a3e;
+    border-color: #2fdc7c;
+}
+
+/* Aside (ofertas) */
+aside {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #0b0b0b;
+    border-top: 1px solid #222;
+}
+
+.promocoes {
+    margin-bottom: 10px;
+}
+
+.lista_ofertas {
+    list-style: none;
+    font-size: 14px;
+}
+
+.lista_ofertas li {
+    margin-bottom: 6px;
+}
+
+/*  Navegação secundária */
+.sublink {
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #222;
+}
+
+.sublink .abaixo {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sublink a {
+    color: #cfcfcf;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.sublink a:hover {
+    background-color: #0f5c2e;
+    color: #fff;
+}
+
+/*  Footer */
+.feet {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.logo_branch_tech {
+    width: 160px;
+    margin: 15px auto;
+    display: block;
+}
+
+.dev {
+    font-size: 12px;
+    color: #aaa;
+}

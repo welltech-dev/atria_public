@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/stl_form.css') }}">
+        <title>Formulário de Cadastro</title>
+        <style>
+            .iti { width: 100%; }
+            .obrigatorio { color: red; }
+        </style>
+    </head>
+    
+    <body>
+
+        <form class="form" method="POST" action="{{ url_for('system.salvar_cliente') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <h2>Formulário de Cadastro</h2>
+
+            <label>Nome Completo<span class="obrigatorio">*</span></label>
+            <input type="text" name="nome" placeholder="Seu nome completo" required>
+
+            <label>E-mail<span class="obrigatorio">*</span></label>
+            <input type="email" name="email" placeholder="seu@email.com" required>
+
+            <fieldset>
+                <legend>Telefone<span class="obrigatorio">*</span></legend>
+                <input id="telefone" type="tel" placeholder="Digite seu telefone" autocomplete="off" required>
+                <input type="hidden" name="ddi" id="ddi">
+                <input type="hidden" name="ddd" id="ddd">
+                <input type="hidden" name="telefone" id="telefone_local">
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço<span class="obrigatorio">*</span></legend>
+                <label>Logradouro</label>
+                <input type="text" name="endereco" placeholder="Rua, Avenida..." required>
+
+                <label>Número</label>
+                <input type="text" name="numero" placeholder="Número" required>
+
+                <label>Bairro</label>
+                <input type="text" name="bairro" placeholder="Bairro" required>
+
+                <label>Complemento</label>
+                <input type="text" name="complemento" placeholder="Apto, Bloco...">
+
+                <label>Cidade</label>
+                <input type="text" name="cidade" placeholder="Cidade" required>
+
+                <label>Estado</label>
+                <input type="text" name="estado" placeholder="Estado" required>
+
+                <label>CEP</label>
+                <input type="text" name="cep" id="cep" placeholder="00000-000" maxlength="9" required>
+
+                <label>País</label>
+                <input type="text" name="pais" placeholder="Brasil" required>
+            </fieldset>
+
+            <button type="submit" class="btn_enviar">Enviar</button>
+        </form>
+
+        <footer class="feet">
+            <button class="btn_voltar"><a href="{{ url_for('system.index')}}">Início</a></button>
+            <img class="logo_branch_tech" src="{{ url_for('static', filename='img/logo_welltech-dev.png') }}" alt="Logo WellTech">
+            <p class="dev">© 2026, WellTech-Dev, todos os direitos reservados.</p>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js"></script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const inputTel = document.querySelector("#telefone");
+            const ddiHidden = document.getElementById("ddi");
+            const dddHidden = document.getElementById("ddd");
+            const telHidden = document.getElementById("telefone_local");
+
+            const iti = window.intlTelInput(inputTel, {
+                initialCountry: "br",
+                preferredCountries: ["br","us","pt"],
+                separateDialCode: true,
+                nationalMode: false,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js"
+            });
+
+            function atualizarHiddenFields() {
+                const data = iti.getSelectedCountryData();
+                const numeroCompleto = inputTel.value.replace(/\D/g,"");
+                ddiHidden.value = data.dialCode || "";
+                if (data.iso2 === "br" && numeroCompleto.length >= 10) {
+                    dddHidden.value = numeroCompleto.slice(0,2);
+                    telHidden.value = numeroCompleto.slice(2);
+                } else {
+                    dddHidden.value = "";
+                    telHidden.value = numeroCompleto;
+                }
+            }
+
+            inputTel.addEventListener("blur", atualizarHiddenFields);
+            inputTel.addEventListener("change", atualizarHiddenFields);
+
+            const form = document.querySelector(".form");
+            form.addEventListener("submit", () => {
+                atualizarHiddenFields(); // garante que telefone hidden fields sejam preenchidos
+            });
+
+            const cepInput = document.getElementById("cep");
+            cepInput.addEventListener("input", (e) => {
+                let value = e.target.value.replace(/\D/g,"");
+                if (value.length > 5) value = value.slice(0,5)+"-"+value.slice(5,8);
+                e.target.value = value;
+            });
+
+        });
+        </script>
+
+    </body>
+</html>

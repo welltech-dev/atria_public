@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finalizar Compra</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/stl_form.css') }}">
+        
+        <style>
+            .obrigatorio{
+            color:red;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="form2_container">
+            <form id="formPagamento">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <h2>Finalize a compra com o seu banco.</h2>
+
+                <label>Forma de pagamento<span class="obrigatorio">*</span></label>
+                <input type="text" name="forma_pagamento" placeholder="Cartão, PIX, etc" required>
+
+                <label>Número do Cartão<span class="obrigatorio">*</span></label>
+                <input type="text" name="numero_cartao" placeholder="ex: 0000 0000 0000 0000" required>
+
+                <label>Validade<span class="obrigatorio">*</span></label>
+                <input type="text" name="validade_cartao" placeholder="MM/AA" required>
+
+                <label>CVV<span class="obrigatorio">*</span></label>
+                <input type="text" name="cvv" placeholder="insira o CVV do seu cartão" required>
+
+                <label>Bandeira<span class="obrigatorio">*</span></label>
+                <input type="text" name="bandeira_cartao" placeholder="Visa, Mastercard..." required>
+
+                <!-- FUTURO: usar produto dinâmico -->
+                {# <input type="hidden" name="produto_id" value="{{ produto.id }}"> #}
+                <input type="hidden" name="produto_id" value="1">
+
+                <button type="submit" class="btn_enviar">Finalizar Compra</button>
+            </form>
+        </div>        
+
+        <div class="container">
+            <a
+            href="{{ url_for('system.index')}}" 
+            class="btn_voltar">Volte à comprar</a>
+            
+        </div>
+
+        <form action="{{ url_for('auth.logout') }}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <button class="btn_logout" type="submit">Encerrar sessão</button>
+        </form>   
+
+        <footer class="feet">
+            <img 
+            class="logo_branch_tech" 
+            src="{{ url_for('static', filename='img/logo_welltech-dev.png' ) }}" 
+            alt="Logo WellTech">
+            <p class="dev">© 2026, WellTech-Dev, todos os direitos reservados.</p>
+        </footer> 
+
+        <script src="{{ url_for('static', filename='js/pagamento.js') }}"></script>
+    </body>
+</html>

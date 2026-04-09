@@ -1,0 +1,136 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    padding: 20px;
+    margin: 0;
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* ===== CAMPOS ===== */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* ===== OBRIGATÓRIO ===== */
+.obrigatorio {
+    color: red;
+}
+
+/* ===== BOTÕES ===== */
+.btn_logout,
+.btn_enviar,
+.btn_voltar {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    padding: 12px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+/* Botão Enviar */
+.btn_enviar {
+    background-color: #200ac8;
+    border: 2px solid #020202;
+    color: #ffffff;
+}
+
+.btn_enviar:hover {
+    background-color: #272af4;
+    border-color: #3027e6;
+}
+
+
+.btn_logout {
+    background-color: #b40606;
+    border: 2px solid #020202;
+    color: #ffffff;
+}
+
+.btn_logout:hover {
+    background-color: #f31b1b;
+    border-color: #ed2626;
+}
+
+/* Botão Voltar */
+.btn_voltar {
+    background-color: #0f5c2e;
+    border: 2px solid #1fa463;
+    color: #ffffff;
+    width: auto;
+}
+
+.btn_voltar:hover {
+    background-color: #65f150;
+    border-color: #53e931;
+}
+
+/* ===== FOOTER ===== */
+.feet {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.logo_branch_tech {
+    width: 160px;
+    margin: 15px auto;
+    display: block;
+}
+
+.dev {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main a {
+    color: #ffffff;
+    text-decoration: none;
+}

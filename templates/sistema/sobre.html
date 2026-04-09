@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre - Primeza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Primeza</h1>
+        <nav>
+            <a href="{{ url_for('system.index') }}">Vitrine 1</a>
+            <a href="{{ url_for('system.index_page') }}">Vitrine 2</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="historia">
+            <h2>História do Primeza</h2>
+            <p>
+                O Primeza Segura nasceu da necessidade de criar uma plataforma confiável
+                e escalável para gestão de clientes e processos financeiros, mesmo em ambientes
+                de teste ou sandbox. Desde o início, a ideia foi combinar segurança, simplicidade
+                e capacidade de evolução.
+            </p>
+        </section>
+
+        <section id="missao">
+            <h2>Missão</h2>
+            <p>
+                Desenvolver sistemas seguros, escaláveis e intuitivos, oferecendo
+                confiança aos usuários e transparência aos parceiros.
+            </p>
+        </section>
+
+        <section id="principios">
+            <h2>Princípios</h2>
+            <ul>
+                <li>Segurança desde a raiz do sistema.</li>
+                <li>Escalabilidade pensada desde o início.</li>
+                <li>Validação e consistência de dados como prioridade.</li>
+                <li>Clareza e transparência na estrutura e na operação.</li>
+                <li>Facilidade para futuros associados e desenvolvedores.</li>
+            </ul>
+        </section>
+
+        <section id="evolucao">
+            <h2>Futuro e evolução</h2>
+            <p>
+                O Primeza já foi desenvolvido para evoluir sem perder integridade:
+                integração futura com bancos de dados robustos (MySQL/Redis),
+                logs detalhados de auditoria, modularização do backend e interface
+                mais moderna no frontend.
+            </p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>
+                Para conhecer mais, entre em contato ou explore as vitrines
+                disponíveis no site.
+            </p>
+        </section>
+    </main>
+
+    <footer class="feet">
+        <img 
+        class="logo_branch_tech" 
+        src="{{ url_for('static', filename='img/logo_welltech-dev.png' ) }}" 
+        alt="Logo WellTech">
+        <p>&copy; 2026 Primeza. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
