@@ -13,10 +13,10 @@
 from twilio.rest import Client  # para que fique mais profissional account_sid e auth_token deve ser integrado ao código como variável ambient.
 
 # Passo 4 -> insira o seu id_account twilio
-account_sid="seu_sid"
+account_sid="meu_sid"
 
 # Passo 5 -> insira o token de autenticação criado no site
-auth_token="seu_token"
+auth_token="meu_token"
 
 # Passo 6 -> crie uma variável de ambiente
 cliente = Client(account_sid, auth_token) # com esta variável o script faz a conexão a sua conta no twilio
